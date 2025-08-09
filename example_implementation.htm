@@ -1,0 +1,848 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Aptos",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:#467886;
+	text-decoration:underline;}
+.MsoChpDefault
+	{font-size:11.0pt;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#467886" vlink="#96607D" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><b>Raspberry Pi Controlled Irrigation System</b></p>
+
+<p class=MsoNormal>By&nbsp;<a
+href="https://www.instructables.com/member/Ben+Finio/">Ben Finio</a>&nbsp;in&nbsp;<a
+href="https://www.instructables.com/circuits/">Circuits</a><a
+href="https://www.instructables.com/circuits/raspberry-pi/projects/">Raspberry
+Pi</a></p>
+
+<p class=MsoNormal>197,615</p>
+
+<p class=MsoNormal>487</p>
+
+<p class=MsoNormal><a
+href="https://www.instructables.com/Raspberry-Pi-Controlled-Irrigation-System/#ible-footer-portal">98</a></p>
+
+<p class=MsoNormal>Featured</p>
+
+<p class=MsoNormal><img border=0 width=80 height=15 id="Picture 68"
+src="example_implementation_files/image001.png" alt=license></p>
+
+<p class=MsoNormal>Save PDF</p>
+
+<p class=MsoNormal><b>Introduction: Raspberry Pi Controlled Irrigation System</b></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FWK/TSYG/INI7ZLR1/FWKTSYGINI7ZLR1.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0yOSAwNToxMDoxMi4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=624
+height=426 id="Picture 67" src="example_implementation_files/image002.jpg"
+alt="Raspberry Pi Controlled Irrigation System"></span></a></p>
+
+<p class=MsoNormal><a href="https://www.instructables.com/member/Ben+Finio/"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=130
+height=130 id="Picture 66" src="example_implementation_files/image003.jpg"
+alt="Ben Finio"></span></a>By&nbsp;<a
+href="https://www.instructables.com/member/Ben+Finio/"><b>Ben Finio</b></a><a
+href="https://www.youtube.com/user/620ben" target="_blank">YouTube</a>Follow</p>
+
+<p class=MsoNormal>More by the author:</p>
+
+<p class=MsoNormal><a
+href="https://www.instructables.com/Indoor-Kids-Climbing-Wall/"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=130
+height=130 id="Picture 65" src="example_implementation_files/image004.jpg"
+alt="Indoor Kids' Climbing Wall"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://www.instructables.com/How-to-Teach-an-Online-Circuits-Class-With-Tinkerc/"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=130
+height=130 id="Picture 64" src="example_implementation_files/image005.jpg"
+alt="How to Teach an Online Circuits Class With Tinkercad"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://www.instructables.com/PoolsideFireside-Cedar-End-Table/"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=130
+height=130 id="Picture 63" src="example_implementation_files/image006.jpg"
+alt="Poolside/Fireside Cedar End Table"></span></a></p>
+
+<p class=MsoNormal>About: Writer for Science Buddies (www.sciencebuddies.org)
+and lecturer at Cornell University's Sibley School of Mechanical and Aerospace
+Engineering.&nbsp;<a href="https://www.instructables.com/member/Ben+Finio/">More
+About Ben Finio »</a></p>
+
+<p class=MsoNormal>Every spring my wife gets really ambitious and plants a big
+vegetable garden. As the summer drags on, ambition turns to laziness and
+unfortunately many of the plants die a slow, withering death from neglect due
+to lack of weeding and watering (except for the tomato plants, which grow like
+mutants in our climate even if you neglect them...so every August we wind up
+with 10,000 tomatoes and no other vegetables).</p>
+
+<p class=MsoNormal>While I can't automate some maintenance tasks like weeding*,
+I can certainly automate the watering and I figure that will give our poor
+plants a better chance at survival. You can buy all sorts of fancy
+programmable&nbsp;<a
+href="http://www.lowes.com/Outdoors/Watering-Irrigation-Drainage/Irrigation-Timers-Accessories/Hose-End-Irrigation-Timers/_/N-1z0wg6r/pl?int_cmp=sr:A:SearchtoCat:Merch:Hose-End_Irrigation_Timers#!">hose</a>,&nbsp;<a
+href="http://www.lowes.com/Outdoors/Watering-Irrigation-Drainage/Irrigation-Timers-Accessories/Irrigation-Timers/_/N-1z0wg6t/pl?int_cmp=sr:A:SearchtoCat:Merch:Irrigation_Timers#!">irrigation</a>,
+and&nbsp;<a
+href="http://www.lowes.com/Outdoors/Watering-Irrigation-Drainage/Garden-Hoses-Accessories/Water-Timers/_/N-1z0wg76/pl?int_cmp=sr:A:SearchtoCat:Merch:Water_Timers#!">water</a>&nbsp;timers
+(not sure about the difference between those three terms, but that's how Lowe's
+has them listed) if you want to automatically water your garden. But, in the
+true spirit of Instructables...where's the fun in buying one when you could
+build it yourself? Enter the Raspberry Pi-Controlled Irrigation System. A quick
+search on Instructables shows that&nbsp;<a
+href="https://www.instructables.com/id/Raspberry-Pi-Irrigation-Controller/">I'm
+not the first one to do this</a>, but I think my project will take a unique
+approach. I really didn't want to deal with calibrating or cleaning a soil
+moisture sensor. I also don't care about being super picky about maintaining an
+optimal soil moisture level. The bar is set pretty low here - I just want to
+keep the plants alive.&nbsp;<i>If</i>&nbsp;we're watering the plants by hand,
+we roughly follow a rule of &quot;Did it rain yesterday? If not, water the
+plants.&quot; So, why not automate that with a Raspberry Pi? Use a weather API
+to answer &quot;did it rain yesterday?&quot; and then the GPIO pins to control
+a&nbsp;<a href="https://en.wikipedia.org/wiki/Solenoid_valve">solenoid valve</a>&nbsp;to
+water the garden. That's what this Instructable will show you how to do,
+including the electronics, programming, and plumbing. The advantage of this
+approach is that it's flexible and easy to expand - for example, if I want to
+decide how long to water based on how much it rained, water based on the&nbsp;<i>future</i>&nbsp;forecast,
+or water in multiple short intervals throughout the day, that just requires
+changing a few lines of code.</p>
+
+<p class=MsoNormal>Please note that this is&nbsp;<i>not</i>&nbsp;a &quot;how to
+use a Raspberry Pi&quot; Instructable. If this is your very first time using a
+Raspberry Pi, there are a TON of&nbsp;<a
+href="https://www.instructables.com/howto/getting+started+raspberry+pi/">getting
+started with Raspberry Pi projects</a>&nbsp;out there - please check those out
+first if you need answers to things like &quot;how do I install the OS?&quot;
+or &quot;what type of power supply do I need?&quot;</p>
+
+<p class=MsoNormal>Ready to get started? Move on to the next step for a full
+materials list!</p>
+
+<p class=MsoNormal>*Consider that a challenge. Someone needs to do a computer
+vision/robotics project that uses a camera to identify weeds and a robotic arm
+to remove them.</p>
+
+<p class=MsoNormal><b>Note on contest entries:</b></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal><a
+     href="https://www.instructables.com/contest/sensors2016/">Sensors Contest</a>:
+     &quot;If it’s got an input and an output, it’s fair game.&quot; - I hope
+     that means the Weather Underground API counts as a sensor, even though I'm
+     not using my own local rainfall sensor.</li>
+ <li class=MsoNormal><a
+     href="https://www.instructables.com/contest/urbanfarming/">Urban Farming
+     Contest</a>: OK, so I'm not exactly doing this on the rooftop of an
+     apartment building, but you should be able to do this project regardless
+     of your location (and this project is sort of a DIY version of the grand
+     prize of that contest anyway)</li>
+ <li class=MsoNormal><a href="https://www.instructables.com/contest/homehacks/">Home
+     Hacks Contest</a>: I certainly hope this is making a regular household
+     task faster and easier, so this one seems like a good fit!</li>
+</ul>
+
+<p class=MsoNormal><b>Step 1: Materials</b></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FMT/AZ0W/IMRYO8NZ/FMTAZ0WIMRYO8NZ.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xMSAwOTozMTozMS4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=624
+height=468 id="Picture 62" src="example_implementation_files/image007.jpg"
+alt=Materials></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/F0Q/EYMU/IMRYO8O3/F0QEYMUIMRYO8O3.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xMSAwOTozMTo0Ni4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=400
+height=300 id="Picture 61" src="example_implementation_files/image008.jpg"
+alt=Materials></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FKF/VLMR/IN237SWA/FKFVLMRIN237SWA.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xNiAwODoxMDowNC4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=400
+height=300 id="Picture 60" src="example_implementation_files/image009.jpg"
+alt=Materials></span></a></p>
+
+<p class=MsoNormal>I got most of the parts for this project at SparkFun,
+Jameco, and Lowe's. I'll do my best to link the exact parts I used, but you can
+make reasonable substitutions and it should still work (e.g. you could use a
+different model Raspberry Pi, or you could do the whole thing with 1&quot; PVC
+pipe instead of 3/4&quot;, provided you get all the right adapters). Note that
+the exact quantity of piping and types of adapters you need will depend on
+things like the size of your garden and whether you also want to have a regular
+hose connected, so you will need to take some measurements and plan your layout
+before you make a trip to the hardware store (see next step).</p>
+
+<p class=MsoNormal><b>Update</b>: thanks to many people on&nbsp;<a
+href="https://www.reddit.com/r/raspberry_pi/comments/4hgy8d/raspberry_pi_controlled_irrigation_system/">Reddit</a>,&nbsp;<a
+href="http://hackaday.com/2016/05/06/k-i-s-s-pi-sprinkler-just-keep-the-plants-alive/">Hackaday</a>,
+and in the comments here for feedback on the electronics and plumbing. The
+biggest point seems to be that my original circuit was missing a&nbsp;<a
+href="https://en.wikipedia.org/wiki/Flyback_diode">flyback diode</a>&nbsp;across
+the relay coil, so I've updated the instructions to include that. I've received
+other comments about including a current-limiting resistor on the RPi's GPIO
+pin, a pull-down resistor on the MOSFET gate, an&nbsp;<a
+href="https://en.wikipedia.org/wiki/Snubber#RC_snubbers">RC snubber</a>&nbsp;in
+parallel with the solenoid valve, and to use poly tubing instead of PVC, but
+I'll leave those changes up to the individual. If you have questions or advice
+on any of those points, please leave a comment.</p>
+
+<p class=MsoNormal><b>Electronics</b></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal><a href="https://www.sparkfun.com/products/13825">Raspberry
+     Pi 3</a>. Used because it has built-in WiFi, but you could do this with an
+     earlier model.</li>
+ <li class=MsoNormal><a href="https://www.sparkfun.com/products/13831">5.25V,
+     2.4A micro-USB power supply</a>. Recommended for the RPi3, older models do
+     not require as much current.</li>
+ <li class=MsoNormal><a
+     href="http://www.amazon.com/Kingston-microSDHC-Memory-SDC4-8GBET/dp/B00200K1TS">Micro
+     SD card with adapter</a>. 8GB recommended, newer versions of Raspbian
+     Jessie don't seem to fit on 4GB cards (unless you plan to install the lite
+     version and only run headless).</li>
+ <li class=MsoNormal><a href="https://www.sparkfun.com/products/100">Relay</a>.
+     I debated using a solid-state AC relay, but this mechanical relay is rated
+     for 100,000 operations at&nbsp;<i>max</i>&nbsp;electrical load - we are
+     well below that limit if you're only watering a couple times a day.</li>
+ <li class=MsoNormal><a href="https://www.sparkfun.com/products/10213">N-channel
+     MOSFET</a>. Required because the RPi's GPIO pins cannot drive the relay
+     coil directly.</li>
+ <li class=MsoNormal><a href="https://www.sparkfun.com/products/8432">2-pin
+     screw terminals</a>&nbsp;(2)</li>
+ <li class=MsoNormal><a href="https://www.sparkfun.com/categories/149">Protoboard
+     or breadboard</a>&nbsp;of your choice</li>
+ <li class=MsoNormal><a href="https://www.sparkfun.com/products/9592">Green LED</a>&nbsp;(3),
+     used as status indicators</li>
+ <li class=MsoNormal><a href="https://www.sparkfun.com/products/8589">Rectifier
+     diode</a></li>
+ <li class=MsoNormal><a href="https://www.sparkfun.com/products/9140">Male/female
+     jumper wires</a>, for connecting to Raspberry Pi GPIO pins</li>
+ <li class=MsoNormal><a href="https://www.sparkfun.com/products/8022">22 AWG
+     solid hookup wire</a>, for making connections on protoboard</li>
+ <li class=MsoNormal><a href="https://www.sparkfun.com/products/11896">Female
+     header pins</a></li>
+ <li class=MsoNormal><a
+     href="https://www.jameco.com/webapp/wcs/stores/servlet/Product_10001_10001_690700_-1">220
+     ohm resistor</a>&nbsp;(3)</li>
+ <li class=MsoNormal><a
+     href="https://www.jameco.com/webapp/wcs/stores/servlet/Product_10001_10001_125840_-1">20
+     AWG stranded hookup wire</a>, for connecting solenoid valve (note that you
+     may need thicker wire if you need to run the wires really far, consult
+     a&nbsp;<a href="http://www.gocsc.com/pdf/5973024.pdf">chart like this</a>&nbsp;to
+     determine what you need)</li>
+ <li class=MsoNormal><a
+     href="https://www.jameco.com/webapp/wcs/stores/servlet/Product_10001_10001_2100195_-1">24
+     VAC 1500mA AC to AC wall adapter</a>.&nbsp;<b>Important:</b>&nbsp;make
+     sure the rating of this adapter matches the requirements of the solenoid
+     valve you purchase! (some valves are DC)</li>
+ <li class=MsoNormal>Optional: monitor for Raspberry Pi. I found a monitor
+     useful for setup and debugging, but once it's working you should be able
+     to run the RPi headless (without a monitor). See instructions for
+     connecting to the RPi remotely via&nbsp;<a
+     href="https://www.raspberrypi.org/documentation/remote-access/vnc/">VNC</a>&nbsp;or&nbsp;<a
+     href="https://www.raspberrypi.org/documentation/remote-access/ssh/">SSH</a>&nbsp;if
+     you do not have a monitor.</li>
+ <li class=MsoNormal>Project box (small cardboard box or plastic container)</li>
+</ul>
+
+<p class=MsoNormal><b>Plumbing&nbsp;</b>(note: NPT =&nbsp;<a
+href="https://en.wikipedia.org/wiki/National_pipe_thread">National Pipe Thread</a>,
+MHT/FHT =&nbsp;<a
+href="https://en.wikipedia.org/wiki/Garden_hose#Standards_and_connectors">Male/Female
+Hose Thread</a>)</p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/pd_289083-74985-57460P_0__?productId=1179013&amp;Ntt=">3/4&quot;,
+     24VAC irrigation valve</a>&nbsp;(1)</li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/ProductDisplay?productId=50328291">Hose faucet
+     Y-adapter</a>&nbsp;(only needed if you also want to attach regular hose)</li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/pd_604453-30775-8835_0__?productId=50328343&amp;Ntt=">Hose
+     quick connectors</a>&nbsp;(1 for faucet plus 1 per soaker hose)</li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/pd_219846-30775-8817_0__?productId=50328299&amp;Ntt=">Coiled
+     spring faucet connector</a>&nbsp;(1)</li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/pd_194636-61002-AISLMHT34_0__?productId=50030698&amp;Ntt=">MHT
+     to 3/4&quot; slip adapter</a>&nbsp;(1 for faucet plus 1 per soaker hose)</li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/pd_23971-1814-PVC+04007++0600_0__?productId=3133085&amp;Ntt=">3/4&quot;
+     PVC pipe</a>&nbsp;(qty depends on size of your garden)</li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/pd_23868-1815-406007RMC_0__?productId=1067627&amp;Ntt=">3/4&quot;
+     PVC slip 90°elbows</a>&nbsp;(minimum of 4, more depending on layout of
+     your garden)</li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/pd_23874-1815-401007RMC_0__?productId=1067661&amp;Ntt=">3/4&quot;
+     PVC slip T-connectors</a>&nbsp;(required to split pipe if you have
+     multiple soaker hoses)</li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/pd_25532-1814-PVC+02100C+0800HC_0__?productId=3514890&amp;Ntt=">3/4&quot;
+     PVC slip couplings</a>&nbsp;(depends on size of your garden, if 10' pipe
+     sections aren't long enough)</li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/pd_21485-34146-P200S+3/4_0__?productId=3351084&amp;Ntt=">3/4&quot;
+     PVC slip ball valve</a>&nbsp;(1)</li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/pd_79589-34146-P32S+3/4_0__?productId=3351594&amp;Ntt=">3/4&quot;
+     PVC slip check valve</a>&nbsp;(1)</li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/pd_188226-69305-511-14-34-34B_0__?productId=50160563&amp;Ntt=">3/4&quot;
+     PVC slip union</a>&nbsp;(1)</li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/pd_23856-1815-436007RMC_0__?productId=1067457&amp;Ntt=">3/4&quot;
+     NPT to PVC slip adapter</a>&nbsp;(4)</li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/Search=soaker+hose?storeId=10151&amp;langId=-1&amp;catalogId=10051&amp;N=0&amp;newSearch=true&amp;Ntt=soaker+hose#!">Soaker
+     hoses</a>&nbsp;(qty and size depend on size of your garden)</li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/pd_150887-138-30244L_0__?productId=4750411&amp;Ntt=">PVC
+     cement and primer</a></li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/Search=outdoor+silicone?storeId=10151&amp;langId=-1&amp;catalogId=10051&amp;N=0&amp;newSearch=true&amp;Ntt=outdoor+silicone#!">Silicone
+     caulk</a></li>
+ <li class=MsoNormal><a
+     href="http://www.lowes.com/pd_242256-67088-62105_0__?productId=3377354&amp;Ntt=">Waterproof
+     wire nuts</a></li>
+ <li class=MsoNormal>Waterproof project box big enough for solenoid valve (I
+     used a small plastic tub)</li>
+</ul>
+
+<p class=MsoNormal><b>Tools</b></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Hacksaw or miter saw to cut PVC pipe</li>
+ <li class=MsoNormal>Shovel, hoe, or trenching spade etc. to dig trenches for
+     pipe</li>
+ <li class=MsoNormal>Wire strippers</li>
+ <li class=MsoNormal>Soldering iron</li>
+</ul>
+
+<p class=MsoNormal><b>Step 2: System Diagram and Planning</b></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FHM/GHJU/IMXOKMT8/FHMGHJUIMXOKMT8.png?auto=webp&amp;frame=1&amp;width=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xMiAxNDozMTo1NS4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=624
+height=416 id="Picture 59" src="example_implementation_files/image010.jpg"
+alt="System Diagram and Planning"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FYX/W9GR/IMXOKQF7/FYXW9GRIMXOKQF7.png?auto=webp&amp;frame=1&amp;fit=bounds&amp;md=MjAxNi0wNC0xMiAxNDo1MTowMC4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=282
+height=188 id="Picture 58" src="example_implementation_files/image011.png"
+alt="System Diagram and Planning"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FJ4/9VLC/IN0LK6PM/FJ49VLCIN0LK6PM.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xNCAxMjozMDozNi4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=282
+height=212 id="Picture 57" src="example_implementation_files/image012.jpg"
+alt="System Diagram and Planning"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/F08/ARX1/IN0LK6QB/F08ARX1IN0LK6QB.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xNCAxMjozMDo1MC4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=282
+height=212 id="Picture 56" src="example_implementation_files/image013.jpg"
+alt="System Diagram and Planning"></span></a></p>
+
+<p class=MsoNormal>Confused about how all those parts fit together after
+reading the materials list? Here's an exploded diagram of the entire plumbing
+system (more details on the electronics in a later step). The exact dimensions
+and orientations will depend on the layout of your garden and relative location
+of the hose faucet. You should&nbsp;<b>definitely</b>&nbsp;plan your layout in
+advance and do a &quot;dry run&quot; (cut straight pieces to length, lay out
+all the pieces of piping in their approximate locations to make sure they'll
+fit). Mistakes in this project can be hard to undo - you don't want to start
+haphazardly digging holes in your yard and cementing pieces of pipe together
+only to find out halfway through that things don't fit together right.</p>
+
+<p class=MsoNormal>A couple important notes:</p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Pay attention to the difference between NPT (national pipe
+     thread) and MHT (male hose thread) adapters. They look similar at first
+     glance, but the threads aren't compatible. NPT adapters are used to
+     connect to the solenoid valve and PVC union. MHT adapters are used to
+     connect to the hose faucet and soaker hoses.</li>
+ <li class=MsoNormal>The entire section in the dotted red box (between the
+     faucet and the PVC union) can be disconnected and brought inside during
+     the winter. This prevents any damage to the solenoid valve if leftover
+     water inside it freezes. I believe the standard approach is just to bury
+     the valve below the frost line, but I wanted easy access to the valve in
+     case something went wrong (this being my first attempt at a DIY irrigation
+     system) or I wanted to make changes to the future. If you just want the
+     valve permanently installed, you can get away without the union and quick
+     connector.</li>
+ <li class=MsoNormal>Make sure you install a drain valve at the lowest point in
+     the system! Again, this is so you can drain out all the water and prevent
+     damage from water freezing in the pipes over the winter. I forgot to do
+     this at first so had to dig up and cut a section of pipe to add a
+     T-connector for the drain.</li>
+ <li class=MsoNormal>&quot;Call before you dig&quot; - you might have seen this
+     phrase on little flags or utility boxes around your neighborhood. If there
+     are any underground utility lines (gas, electric, water etc.) in your
+     yard, make sure you know where they are and avoid them. If in doubt, call
+     the utility company to be safe and they will mark the lines for you.</li>
+ <li class=MsoNormal>I recommend using an&nbsp;<i>indoor</i>&nbsp;outlet for
+     the 24VAC adapter, as it is not rated for outdoor use. I ran the wires
+     through a window. If you must use an outdoor outlet, make sure to use an
+     appropriate weather-rated adapter.</li>
+</ul>
+
+<p class=MsoNormal><b>Step 3: Dig Trenches</b></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FVJ/HA18/IN0LK2XB/FVJHA18IN0LK2XB.jpg?auto=webp&amp;frame=1&amp;fit=bounds&amp;md=MjAxNi0wNC0xNCAxMTo1MDo1Ny4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=600
+height=450 id="Picture 55" src="example_implementation_files/image014.jpg"
+alt="Dig Trenches"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FEC/YOU0/IN0LK2QP/FECYOU0IN0LK2QP.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xNCAxMTo1MDozOS4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=600
+height=450 id="Picture 54" src="example_implementation_files/image015.jpg"
+alt="Dig Trenches"></span></a></p>
+
+<p class=MsoNormal>Dig trenches where you'll need sections of underground pipe.
+Note that there is probably some rule of thumb about how deep these trenches
+should be, and I didn't follow it. My trenches are only a few inches deep, just
+enough to bury the pipes and cover them with some soil. If that's a terrible
+idea, please let me know in the comments and I'll update this step.</p>
+
+<p class=MsoNormal>Update: someone already pointed out that you risk cracking
+the pipes when you step on them if they're not buried deep enough. So, bury
+your pipes deeper than pictured here.</p>
+
+<p class=MsoNormal><b>Step 4: Lay Pipe</b></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FM5/A54S/IMRYO8ME/FM5A54SIMRYO8ME.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xMSAwOToyMjowNC4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=624
+height=468 id="Picture 53" src="example_implementation_files/image016.jpg"
+alt="Lay Pipe"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FQN/LMKU/IMRYO8MT/FQNLMKUIMRYO8MT.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xMSAwOToyMjoyMi4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=400
+height=300 id="Picture 52" src="example_implementation_files/image017.jpg"
+alt="Lay Pipe"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/F86/VXS5/IMRYO8N9/F86VXS5IMRYO8N9.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xMSAwOToyMjo1OS4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=400
+height=300 id="Picture 51" src="example_implementation_files/image018.jpg"
+alt="Lay Pipe"></span></a></p>
+
+<p class=MsoNormal>3 More Images</p>
+
+<p class=MsoNormal>Follow the instructions on the PVC primer/cement to lay out
+the sections of pipe and various slip connectors. These sections should be
+terminated with slip-MHT adapters and quick connectors for the soaker hoses
+(refer back to diagram in step 2). Don't forget the drain valve!</p>
+
+<p class=MsoNormal><b>Step 5: Put Solenoid Valve in Plastic Box</b></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FJB/RKVA/IMRYO8OD/FJBRKVAIMRYO8OD.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xMSAwOTozMjowNC4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=624
+height=468 id="Picture 50" src="example_implementation_files/image019.jpg"
+alt="Put Solenoid Valve in Plastic Box"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FQS/8GZR/IMRYO8M7/FQS8GZRIMRYO8M7.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xMSAwOToyMTo0OS4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=400
+height=300 id="Picture 49" src="example_implementation_files/image020.jpg"
+alt="Put Solenoid Valve in Plastic Box"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/F95/EMMW/IMRYO8NQ/F95EMMWIMRYO8NQ.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xMSAwOTozMDo1NC4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=400
+height=300 id="Picture 48" src="example_implementation_files/image021.jpg"
+alt="Put Solenoid Valve in Plastic Box"></span></a></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Screw NPT-slip adapters into both ends of the solenoid
+     valve.</li>
+ <li class=MsoNormal>Drill two 1&quot; holes opposite each other in the sides
+     of your plastic box (note that 3/4&quot; PVC pipe refers to the inner
+     diameter, the outer diameter is 1&quot;).</li>
+ <li class=MsoNormal>Push straight segments of PVC pipe through the holes and
+     connect them to the slip adapters inside the box. Remember to use PVC
+     primer/cement to seal the joints.</li>
+ <li class=MsoNormal>Use silicone adhesive to seal around the perimeter of the
+     holes you drilled.</li>
+ <li class=MsoNormal>Important: drill a few small drain holes in the bottom of
+     the box. I found out this was necessary when I realized I had a few small
+     leaks because I didn't tighten the adapters enough.</li>
+</ul>
+
+<p class=MsoNormal><b>Step 6: Connect Solenoid Valve to Rest of System</b></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FWA/Q1EK/IN0LK5AW/FWAQ1EKIN0LK5AW.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xNCAxMjoxMDowNy4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=624
+height=468 id="Picture 47" src="example_implementation_files/image022.jpg"
+alt="Connect Solenoid Valve to Rest of System"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FBL/XAWX/IMUVXRQK/FBLXAWXIMUVXRQK.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xMSAwOTozMzoxNC4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=318
+height=424 id="Picture 46" src="example_implementation_files/image023.jpg"
+alt="Connect Solenoid Valve to Rest of System"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FX9/Y8SN/IN0LK6QG/FX9Y8SNIN0LK6QG.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xNCAxMjozMDo1NS4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=318
+height=239 id="Picture 45" src="example_implementation_files/image024.jpg"
+alt="Connect Solenoid Valve to Rest of System"></span></a></p>
+
+<p class=MsoNormal>This is the most complicated plumbing step in terms of
+adapters and valves. Each part is labeled in the photo above (I disconnected
+the valve from the rest of the system so I could get a clear photo), but you
+can also refer back to the diagram in step 2. It might be easier to assemble
+this segment inside or on a workbench, then take it outside to connect it.</p>
+
+<p class=MsoNormal><b>Important:&nbsp;</b>Make sure you get the flow direction
+of the check valve correct! The valve has an arrow on it that indicates flow
+direction. This arrow should point towards the solenoid valve (to the right in
+the photo above). A check-valve is a one-way valve that will prevent dirty
+water from flowing backwards into your house, if for some reason the pipes in
+your house lose pressure. I'm not 100% sure if this is necessary (I've never
+seen a check valve installed on a regular garden hose, which can have dirty
+water sitting in it), but after some Googling about sprinkler systems, I
+figured better safe than sorry.</p>
+
+<p class=MsoNormal><b>Step 7: Attach Solenoid Valve Wires</b></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FRG/O75D/IMRYO8NE/FRGO75DIMRYO8NE.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xMSAwOToyMzoyNi4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=624
+height=468 id="Picture 44" src="example_implementation_files/image025.jpg"
+alt="Attach Solenoid Valve Wires"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/F0L/Y9PD/IMRYO8NV/F0LY9PDIMRYO8NV.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xMSAwOTozMTowNS4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=400
+height=300 id="Picture 43" src="example_implementation_files/image026.jpg"
+alt="Attach Solenoid Valve Wires"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FIF/Q21Z/IMRYO8NN/FIFQ21ZIMRYO8NN.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xMSAwOToyMzozOC4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=400
+height=300 id="Picture 42" src="example_implementation_files/image027.jpg"
+alt="Attach Solenoid Valve Wires"></span></a></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Cut two segments of stranded 20 AWG hookup wire (length
+     depends on how far you need to run the wires into your house).</li>
+ <li class=MsoNormal>Drill small holes in the sides of the plastic box and
+     thread the wires through.</li>
+ <li class=MsoNormal>Connect them to the solenoid valve wires with waterproof
+     wire connectors.</li>
+ <li class=MsoNormal>Use silicone to seal around the holes.</li>
+ <li class=MsoNormal>Run the wires into your house to wherever you plan on
+     having the Raspberry Pi set up. I poked a tiny hole in a screen and
+     threaded them in through a window. You will connect these wires to your
+     circuit in the next step.</li>
+</ul>
+
+<p class=MsoNormal><b>Step 8: Check for Leaks!</b></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FHM/S60P/IN4P9GIQ/FHMS60PIN4P9GIQ.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xNyAxMDoyMjowNy4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=600
+height=450 id="Picture 41" src="example_implementation_files/image028.jpg"
+alt="Check for Leaks!"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FF4/652J/IN4P9GMH/FF4652JIN4P9GMH.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xNyAxMDoyMjoxOS4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=600
+height=450 id="Picture 40" src="example_implementation_files/image029.jpg"
+alt="Check for Leaks!"></span></a></p>
+
+<p class=MsoNormal>Before you go any farther, you probably want to check your
+plumbing for leaks. Luckily you can do this before you even make the circuit or
+hook up the Raspberry Pi. Take the two solenoid valve wires you just ran
+inside, and twist them directly to the two wires from the 24VAC adapter (note:
+if your adapter ends in a barrel plug, cut it off then separate and strip the
+wires). This will open the valve and water should flow through your pipes. If
+you can't hear water flowing, check that you've opened any other necessary
+valves, like the hose faucet and internal shutoff for the pipe.</p>
+
+<p class=MsoNormal>Hopefully you don't have any leaks at your cemented joints,
+or you might have to cut the pipe and re-do the joints. I had a few leaks at
+threaded joints, particularly the union, that required tightening. Note that
+you can tolerate slow leaks&nbsp;<i>downstream</i>&nbsp;of the solenoid valve,
+because those areas will only be pressurized when the valve is open. However,
+you really do not want leaks&nbsp;<i>upstream</i>&nbsp;of the solenoid valve
+(between the hose faucet and solenoid valve), because those will be pressurized
+all the time and will leak continuously.</p>
+
+<p class=MsoNormal>Finally: I'm not sure if I'm violating some rule about
+mixing plastic and metal threads, and if that could contribute to leaks. I
+didn't have much of a choice because I had to get from a metal hose faucet to
+plastic PVC somehow. If you have any input on that point, please leave a
+comment.</p>
+
+<p class=MsoNormal><b>Step 9: Circuit</b></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/F5B/EFTH/INXGQIAC/F5BEFTHINXGQIAC.png?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNS0wOCAwNzo1MDo1Ny4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=624
+height=413 id="Picture 39" src="example_implementation_files/image030.jpg"
+alt=Circuit></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/F71/UJQZ/INXGQIAB/F71UJQZINXGQIAB.png?auto=webp&amp;frame=1&amp;width=1024&amp;fit=bounds&amp;md=MjAxNi0wNS0wOCAwNzo1MDo1NC4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=301
+height=219 id="Picture 38" src="example_implementation_files/image031.png"
+alt=Circuit></span></a></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/F74/ADA5/IN4P8LG4/F74ADA5IN4P8LG4.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xNyAwOTozMjozNS4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=301
+height=376 id="Picture 37" src="example_implementation_files/image032.jpg"
+alt=Circuit></span></a></p>
+
+<p class=MsoNormal>2 More Images</p>
+
+<p class=MsoNormal>The images above show a breadboard diagram and schematic of
+the circuit. This should be clear to assemble based on the diagrams, but leave
+a comment if you have questions. I recommend testing everything on a solderless
+breadboard (see next step) before you finalize the circuit on protoboard.</p>
+
+<p class=MsoNormal>Here's how it works:</p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>A relay controls the 24VAC power to the solenoid valve.</li>
+ <li class=MsoNormal>The relay coil requires 5V and the Raspberry Pi's GPIO
+     pins are only 3.3V. So, the Raspberry Pi drives a MOSFET which turns the
+     relay coil on and off, which then turns the solenoid valve on and off. By
+     default, when the GPIO pin is low, the relay is open so the valve is
+     closed (water does not flow). When the GPIO pin goes high, the relay
+     closes, and the valve will open (water will flow).</li>
+ <li class=MsoNormal>I added a couple status LEDs to use as indicators. One is
+     connected directly to the RPi's 3.3V supply, so you know your circuit is
+     getting power. Another will be turned on when the solenoid valve is open,
+     and the third is in there just in case I think of something else to use it
+     for.</li>
+</ul>
+
+<p class=MsoNormal>Note that&nbsp;<a href="http://fritzing.org/home/">Fritzing</a>&nbsp;did
+not have a relay that matches the pinout of&nbsp;<a
+href="https://www.sparkfun.com/products/100">this SparkFun part</a>. I was too
+lazy to make a new Fritzing part so I just edited the breadboard diagram
+in&nbsp;<a href="https://inkscape.org/en/">Inkscape</a>, which is why the relay
+and wires connected to it look a little different. If you feel like making a
+new Fritzing part (which SparkFun&nbsp;<a
+href="https://learn.sparkfun.com/tutorials/make-your-own-fritzing-parts">has a
+tutorial on</a>), let me know and I can update the Fritzing file.</p>
+
+<p class=MsoNormal>Also note that I forgot to include a flyback diode across
+the relay coil initially, so it isn't shown in the picture (but I did update
+the Fritzing diagrams).</p>
+
+<p class=MsoNormal>Finally, not a bad idea to put everything in a project box
+once you've finished the circuit board. A SparkFun box with some holes poked in
+the sides for the wires works nicely.</p>
+
+<p class=MsoNormal><b>Attachments</b></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal><a
+     href="https://content.instructables.com/FMK/YQJQ/INXGQIBX/FMKYQJQINXGQIBX.fzz"><img
+     border=0 width=48 height=48 id="Picture 36"
+     src="example_implementation_files/image033.gif"
+     alt="download {{ file.name }}"><b>raspberry pi irrigation system.fzz</b></a></li>
+</ul>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FMK/YQJQ/INXGQIBX/FMKYQJQINXGQIBX.fzz">Download</a></p>
+
+<p class=MsoNormal><b>Step 10: Testing Circuit</b></p>
+
+<p class=MsoNormal><a
+href="https://content.instructables.com/FUB/UUT7/IN4VW58F/FUBUUT7IN4VW58F.jpg?auto=webp&amp;frame=1&amp;width=1024&amp;height=1024&amp;fit=bounds&amp;md=MjAxNi0wNC0xNyAxMzo0MToxNC4w"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=624
+height=468 id="Picture 35" src="example_implementation_files/image034.jpg"
+alt="Testing Circuit"></span></a></p>
+
+<p class=MsoNormal>Before you go for full-blown automation, it's a good idea to
+test the circuit manually. You can do this by using the command line in Python.
+Please remember that I am assuming you have basic knowledge of how to use a
+Raspberry Pi at this point. If you find yourself asking questions like
+&quot;how do I install the operating system?&quot; or &quot;how do I launch
+Python?&quot;, you should check out the&nbsp;<a
+href="https://www.instructables.com/howto/getting+started+with+raspberry+pi/">many
+Instructables on getting started with Raspberry Pi</a>&nbsp;or the&nbsp;<a
+href="https://www.raspberrypi.org/resources/">Raspberry Pi Foundation's
+official learning resources</a>&nbsp;before you continue.</p>
+
+<p class=MsoNormal>To test your circuit, power up your Raspberry Pi (the top
+LED on your circuit board should light up since it is connected directly to the
+3.3V supply), then open Python and enter the following commands:</p>
+
+<p class=MsoNormal>import RPi.GPIO as GPIO</p>
+
+<p class=MsoNormal>GPIO.setmode(GPOI.BCM)</p>
+
+<p class=MsoNormal>GPIO.setup(17,out)</p>
+
+<p class=MsoNormal>GPIO.setup(27,out)</p>
+
+<p class=MsoNormal>GPIO.setup(22,out)</p>
+
+<p class=MsoNormal>This initializes the GPIO pin controls and sets pins 17, 27,
+and 22 as outputs. Now type</p>
+
+<p class=MsoNormal>GPIO.output(27,GPIO.HIGH) </p>
+
+<p class=MsoNormal>GPIO.output(22,GPIO.HIGH)</p>
+
+<p class=MsoNormal>This should turn on the other two status LEDs. You know
+things are working so far. Now for the big test (drumroll). Type</p>
+
+<p class=MsoNormal>GPIO.output(17,GPIO.HIGH)</p>
+
+<p class=MsoNormal>You should hear a &quot;click&quot; as the relay switches
+position. Go outside and check your solenoid valve. It should be open and water
+should be flowing. Assuming you checked for and fixed any leaks previously,
+this means everything is working! Now, go back inside and type</p>
+
+<p class=MsoNormal>GPIO.output(17,GPIO.LOW)</p>
+
+<p class=MsoNormal>You should hear another &quot;click&quot; from the relay.
+This turns the valve off. Go back outside and check that the water has stopped.</p>
+
+<p class=MsoNormal>Great so far...but you don't want to have to type a bunch of
+commands every time you want to water your plants. Now it's time to automate
+the whole thing!</p>
+
+<p class=MsoNormal><b>Warning: do not use GPIO.cleanup()</b>. Through a few
+hours of irritating troubleshooting, I found that this command (for reasons I
+still don't fully understand) causes the relay to turn on again, opening the
+valve. The best explanation I can find came from&nbsp;<a
+href="http://raspberrypi.stackexchange.com/questions/34363/why-cleanup-the-gpio-pins">this
+Stackexchange thread</a>&nbsp;where a comment states that &quot;The cleanup
+method sets all the gpios you have used to be inputs and disables the internal
+pull-ups/downs for those gpios.&quot; You need the pin to stay as an&nbsp;<i>output</i>&nbsp;with
+a low voltage to keep the relay off, so that could cause the problem. I tried
+adding a 10K pull-down resistor to the MOSFET gate but that didn't work. So,
+even though it's generally recommended as good practice, I'd avoid using
+GPIO.cleanup() for this project. Please leave a comment if you have a solution
+here.</p>
+
+<p class=MsoNormal><b>Step 11: Code</b></p>
+
+<p class=MsoNormal>Now that you have a working circuit and plumbing system, you
+will install code on your Raspberry Pi that&nbsp;<i>automatically</i>&nbsp;checks
+the past 24 hours' rainfall and decides whether or not to open the solenoid
+valve. Then you'll have a hands-free watering experience!</p>
+
+<p class=MsoNormal>Credit for the code for this project goes to my friend Mark
+Veillette. The files and installation instructions are available on his github
+page:&nbsp;<a href="https://github.com/markveillette/rpi_sprinkler">https://github.com/markveillette/rpi_sprinkler</a>.
+The code is pretty well-commented but here's a general explanation of how it
+works:</p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal><b>run_sprinkler.py</b>&nbsp;is the main file that checks
+     a weather API for the past 24 hours' rainfall, decides whether or not to
+     open the solenoid valve based on the rainfall amount, controls the GPIO
+     pins, and writes the resulting actions to a log file.</li>
+ <li class=MsoNormal><b>config&nbsp;</b>is a configuration file where you enter
+     your Weather Underground API key, your city/state, the GPIO pins used by
+     the circuit, and the rain threshold (in inches) for running the irrigation
+     system.</li>
+ <li class=MsoNormal><b>run.crontab</b>&nbsp;is a scheduling file where you set
+     when run_sprinkler.py will run, using&nbsp;<a
+     href="https://en.wikipedia.org/wiki/Cron">Cron</a>, a Linux job scheduler.
+     This has the advantage of only running the Python code briefly at certain
+     times of day, rather than leaving a Python script running in an infinite
+     loop 24 hours a day and constantly checking the time (like I did in
+     my&nbsp;<a
+     href="https://www.instructables.com/id/Wireless-Christmas-Light-Timer-with-Raspberry-Pi-a/">Christmast
+     light timer project</a>...whoops). By default it is set to run twice a day
+     at 6am and 6pm, but this is highly customizable. For example, you could
+     set it to only run every Tuesday and Thursday, or only on odd days of the
+     month.</li>
+</ul>
+
+<p class=MsoNormal>To get it running, follow the download and installation
+instructions on Mark's Github page. Be sure to go through the recommended
+testing commands to make sure everything is working smoothly. Then, let it run
+for 24 hours, come back to check the log file, and make sure the results are
+consistent with weather you actually observed (in other words, if it didn't
+rain, it should have turned on the sprinkler and the log file will say that).
+If you have any trouble getting the code to run, please post a comment along
+with any error messages you received and I'll do my best to help out.</p>
+
+<p class=MsoNormal>(Note that Mark decided to call it a &quot;sprinkler&quot; -
+that's more compact than &quot;irrigation system,&quot; so whatever. They refer
+to the same thing.)</p>
+
+<p class=MsoNormal><b>Step 12: Grow!</b></p>
+
+<p class=MsoNormal>Make sure you monitor the entire system for a few days to
+confirm that it's running smoothly. Check the plumbing for leaks and check the
+log file to make sure the program's actions are consistent with the weather you
+observe. Most importantly, check the health of your plants! You don't want to
+over or under-water, so adjust the timing and duration of the watering in the
+run.crontab and config files as needed (see the Github page for instructions on
+making changes to the files). This is where some actual gardening know-how
+would come in handy, because I'm doing the timing by trial and error - any
+suggestions for typical watering times using soaker hoses for a vegetable
+garden in the Northeast would be appreciated.</p>
+
+<p class=MsoNormal>Any other questions or suggestions? Don't hesitate to leave
+a comment - thanks for reading!</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
