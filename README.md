@@ -1,4 +1,4 @@
-# Neptune
+# Triton
 Your everyday run of the mill raspberry pi and python irrigation system
 
 
